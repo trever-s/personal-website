@@ -1,0 +1,98 @@
+@import 'compass';
+@import 'susy';
+
+// --------------------------------------------------------------------------
+// Type
+// --------------------------------------------------------------------------
+
+@mixin ligatures{
+    font-feature-settings: "dlig" on;
+    -moz-font-feature-settings: "dlig" on;
+    -ms-font-feature-settings: "dlig" on;
+    -webkit-font-feature-settings: "dlig" on;
+  }
+
+@mixin placeholder($color){
+    &::-webkit-input-placeholder        { color: $color }
+    &:-moz-placeholder                  { color: $color }
+    &::-moz-placeholder                 { color: $color }
+    &:-ms-input-placeholder             { color: $color }
+}
+
+@mixin placeholder-focus($color){
+    &:focus::-webkit-input-placeholder { color: $color }
+    &:focus:-moz-placeholder           { color: $color }
+    &:focus:-ms-input-placeholder      { color: $color }
+}
+
+
+
+//Faces
+.sans       { font-family:rooney-sans, calibre, corbel, "lucida sans", sans-serif; }
+.serif      { font-family:rooney-web, cambria, constantia, palatino, serif; }
+.display    { font-family:rb, impact, techno, sans-serif; }
+.script     { font-family:rs, Pilgi, "Brush Script", serif; @include ligatures; }
+
+$sans: rooney-sans, calibre, corbel, "lucida sans", sans-serif;
+$serif: rooney-web, cambria, constantia, palatino, serif;
+$display: rb, impact, techno, sans-serif;
+$script: rs, Pilgi, "Brush Script", serif; 
+
+//Size
+.f16 { @include adjust-font-size-to(16px) }
+.f18 { @include adjust-font-size-to(18px) }
+.f20 { @include adjust-font-size-to(20px) }
+.f24 { @include adjust-font-size-to(24px) }
+.f30 { @include adjust-font-size-to(30px) }
+.f36 { @include adjust-font-size-to(36px) }
+.f48 { @include adjust-font-size-to(48px) }
+.f56 { @include adjust-font-size-to(56px) }
+.f72 { @include adjust-font-size-to(72px) }
+.f84 { @include adjust-font-size-to(84px) }
+.f96 { @include adjust-font-size-to(96px) }
+
+//Weight
+.w100 { font-weight: 100 }
+.w200 { font-weight: 200 }
+.w300 { font-weight: 300 }
+.w400 { font-weight: 400 }
+.w500 { font-weight: 500 }
+.w600 { font-weight: 600 }
+.w700 { font-weight: 700 }
+.w800 { font-weight: 800 }
+.w900 { font-weight: 900 }
+
+//Capitalization
+.upper { text-transform: uppercase  }
+.lower { text-transform: lowercase  }
+.caps  { text-transform: capitalize }
+
+// --------------------------------------------------------------------------
+// Grid
+// --------------------------------------------------------------------------
+
+//Widths
+.full     { @include span-columns(16) }
+.half     { @include span-columns(8)  }
+.quarter  { @include span-columns(4)  }
+.eighth   { @include span-columns(2)  }
+
+.left   { text-align: left   }
+.center { text-align: center }
+.right  { text-align: right  }
+
+// --------------------------------------------------------------------------
+// Shadows
+// --------------------------------------------------------------------------
+
+//Fields
+$shadow-1: rgba($black,0.5) 0 1px 4px inset;
+$shadow-2: rgba($black,0.5) 0 0 0 1px inset;
+$shadow-3: rgba($white,0.1) 0 1px ;
+$shadow-4: rgba($white,0.2) 0 0 0 1px ;
+
+//Buttons
+$shadow-5: darken($orange,40%) 0px 5px 5px -3px;
+$shadow-6: rgba($black,0.25) 0 0 0 1px;
+$shadow-7: rgba($white,0.1) 0 1px ;
+$shadow-8: rgba($white,0.2) 0 0 0 1px ;

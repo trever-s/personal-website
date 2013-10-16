@@ -1,0 +1,153 @@
+// --------------------------------------------------------------------------
+// Base element styles
+// Typography / Resets / Layouts / Modules
+// --------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------
+// Imports
+// ----------------------------------------------------------------------------
+
+@import 'compass';
+@import 'susy';
+
+// --------------------------------------------------------------------------
+// IE Support
+// --------------------------------------------------------------------------
+
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
+// --------------------------------------------------------------------------
+// Vertical Rhythm
+// --------------------------------------------------------------------------
+
+$base-font-size       : 16px;
+$base-line-height     : 20px;
+$base-rhythm-unit     : 1em;
+$relative-font-sizing : true;
+$font-unit: if($relative-font-sizing, 1em, $base-font-size);
+
+
+// --------------------------------------------------------------------------
+// Horizontal Rhythm (Grid)
+// --------------------------------------------------------------------------
+
+$container-style: magic;
+$total-columns: 14;
+$column-width: 3em;
+$gutter-width: 2em;
+$grid-padding: 0;
+
+// --------------------------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------------------------
+
+$break-a-width : 24em;
+$break-a-cols  : 4;
+
+$break-b-width : 30em;
+$break-b-cols  : 8;
+
+$break-c-width : 55em;
+$break-c-cols  : 14;
+
+$break-d-width : 100em;
+$break-d-cols  : 20;
+
+// --------------------------------------------------------------------------
+// Colors
+// --------------------------------------------------------------------------
+
+$orange             : #fe854e;
+$darkblue           : #1456a6;
+$lightblue          : #fefeff;
+$green              : #ccff00;
+$white              : #ffffff;
+$black              : #0a2e59;
+
+// --------------------------------------------------------------------------
+// @font-face
+// --------------------------------------------------------------------------
+
+// Tilting Gothic Family
+
+// Condensed Light
+@font-face {
+    font-family: 'CondensedLight';
+    src: url('../fonts/TitlingGothicFBCondLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Extendeded Light
+@font-face {
+    font-family: 'ExtendedLight';
+    src: url('../fonts/TitlingGothicFBExtendedLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Extendeded Thin
+@font-face {
+    font-family: 'ExtendedThin';
+    src: url('../fonts/TitlingGothicFBExtendedThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Narrow Black
+@font-face {
+    font-family: 'NarrowBlack';
+    src: url('../fonts/TitlingGothicFBNarrowBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Narrow Light
+@font-face {
+    font-family: 'NarrowLight';
+    src: url('../fonts/TitlingGothicFBNarrowLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Narrow Thin
+@font-face {
+    font-family: 'NarrowThin';
+    src: url('../fonts/TitlingGothicFBNarrowThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Normal Black
+@font-face {
+    font-family: 'NormalBlack';
+    src: url('../fonts/TitlingGothicFBNormalBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Normal Thin
+@font-face {
+    font-family: 'NormalThin';
+    src: url('../fonts/TitlingGothicFBNormalThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Skyline Thin
+@font-face {
+    font-family: 'SkylineThin';
+    src: url('../fonts/TitlingGothicFBSkylineThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Wide Medium
+@font-face {
+    font-family: 'WideMedium';
+    src: url('../fonts/TitlingGothicFBWideMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

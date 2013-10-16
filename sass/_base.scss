@@ -1,0 +1,589 @@
+// ----------------------------------------------------------------------------
+// Imports
+// ----------------------------------------------------------------------------
+
+@import 'compass';
+@import 'susy';
+
+// --------------------------------------------------------------------------
+// Base + Reset
+// --------------------------------------------------------------------------
+
+html,
+body {
+    font-size: $base-font-size;
+    font-family: $sans;
+    background-color: $white;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+blockquote,
+block {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration : none;
+    color: $orange;
+}
+
+ul, li {
+    padding:0;
+    margin:0;
+    list-style-position: inside;
+}
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+input {
+    border: 0 none;
+}
+
+input, 
+select, 
+textarea {
+    font-family: $serif;
+    color:$darkblue;
+    resize: none;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+fieldset {
+    @include box-sizing(border-box);
+    display : block;
+    padding : 0;
+    border  : none;
+    outline : 0;
+    margin: 0;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+    *margin-left: -7px;
+}
+
+button,
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input:focus {
+    color: $darkblue
+}
+
+
+// --------------------------------------------------------------------------
+// Layout
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// Grid
+// --------------------------------------------------------------------------
+
+.m-25 {
+   @include span-columns(3,12);
+   img {@include span-columns(12,12);}
+    &:nth-of-type(4n+4) { @include omega; overflow: hidden; display: inline; }
+}
+
+.m-33 {
+   @include span-columns(4,12);
+   img {@include span-columns(12,12);}
+    &:nth-of-type(3n+3) { @include omega; }
+}
+
+.m-50 {
+   @include span-columns(6,12);
+   img {@include span-columns(6,12);}
+   &:nth-of-type(2n+2) { @include omega; }
+}
+
+.m-66 {
+   @include span-columns(8 omega,12);
+   img {@include span-columns(8 omega,8);}
+} 
+
+.m-100 {
+   @include span-columns(12,12);
+   img {@include span-columns(12,12);}
+} 
+
+// --------------------------------------------------------------------------
+// Campaign
+// --------------------------------------------------------------------------
+
+.m-campaign {
+    padding: 0 0 220px 0;
+    color: $lightblue;
+}
+
+.m-campaign-display {
+    @include rhythm($trailer: 0.25);
+}
+
+.m-campaign-script {
+    @include rhythm($trailer: 1);
+}
+
+.m-campaign-form {
+    @include rhythm($trailer: 4);
+}
+
+.m-campaign-field, .m-campaign-btn {
+    padding: 8px 16px;
+}
+
+.m-campaign-field {
+    width:300px;
+    background-color: $lightblue;
+    @include border-radius(5px 0 0 5px);
+}
+
+.m-campaign-btn {
+    @include border-radius(0 5px 5px 0);
+}
+
+.m-campaign-thanks {
+    @include rhythm($padding-trailer: 3);
+}
+
+.m-campaign-thanks span {
+    color: $green;
+    font-weight: 100;
+}
+
+// --------------------------------------------------------------------------
+// Introducing…
+// --------------------------------------------------------------------------
+
+.m-intro-list {
+    clear: both;
+}
+
+.m-intro-list li {
+    list-style: none;
+    @include span-columns(4,12); /*Need to find more elegant solution*/
+    &:nth-of-type(3n+1) { @include omega; }
+    img {@include span-columns(12,12);}
+}
+
+.m-intro-top, .m-intro-btm {
+    @include adjust-font-size-to(36px);
+    font-weight: 100;
+}
+
+.m-intro-top {
+    @include rhythm($padding-leader: 1, $padding-trailer: 1);
+}
+
+.m-intro-btm {
+    @include rhythm($leader: 3);
+}
+
+// --------------------------------------------------------------------------
+// Slide Layout & Typography
+// --------------------------------------------------------------------------
+
+.m-ma-list {
+    @include rhythm($leader: 1);
+    @include adjust-font-size-to(20px, 1.6);
+    text-indent: 30px;
+}
+
+// --------------------------------------------------------------------------
+// Slide Layout & Typography
+// --------------------------------------------------------------------------
+
+.m-slides {
+    @include rhythm($leader: 1.5);    
+    overflow: hidden;
+}
+
+.m-slide-content {
+    @include span-columns(12,12);
+}
+
+.m-slide-content h3 {
+    @include rhythm($leader: 1, $trailer: -.5);
+    @include adjust-font-size-to(36px);
+    font-family: $script;
+}
+
+.m-slide-content p {
+    @include rhythm($leader: 1);
+    @include adjust-font-size-to(20px);
+    font-family: $serif;
+    font-weight: 100;
+}
+
+.m-slide-02, .m-slide-06, .m-slide-10, .m-slide-14,
+.m-slide-03, .m-slide-07, .m-slide-11, .m-slide-15,
+.m-slide-04, .m-slide-08, .m-slide-12, .m-slide-16 {
+    display: none;
+}
+
+// --------------------------------------------------------------------------
+// Slide Nav
+// --------------------------------------------------------------------------
+
+.m-nav {
+    clear:both;
+    text-align: center;
+
+    ul {
+        @include inline-block-list;
+    }
+
+    ul li {
+        padding: 0.75em 0;
+        margin-right: 2em;
+        cursor: pointer;
+        @include adjust-font-size-to(20px);
+        font-weight: 100;
+    }
+
+    ul li:last-of-type {
+        margin-right:0;
+    }
+}
+
+// --------------------------------------------------------------------------
+// Slide Skin
+// --------------------------------------------------------------------------
+
+.m-light {
+    background: $lightblue;
+    color: $darkblue;
+    box-shadow: inset 0 1px 0 rgba($black, 0.5), inset 0 3px 12px rgba($black, 0.2);
+
+    p {
+        font-weight: normal;
+    }
+
+    .m-active-item {
+        color: $darkblue;
+        border-bottom:2px solid $orange !important;
+    }
+
+    .m-nav ul li {
+        color: $darkblue;
+        border-bottom:2px solid $darkblue;
+    }
+
+    ul {
+        font-family: $serif;
+        color: rgba($darkblue, 0.75);
+    }
+}
+
+.m-dark {
+    background: $darkblue;
+    color: $lightblue;
+    box-shadow: inset 0 1px 0 rgba($black, 0.5), inset 0 3px 12px rgba($black, 0.2);
+
+    p {
+        color: rgba($lightblue,0.75);
+    }
+
+    .m-active-item {
+        color: $lightblue;
+        border-bottom:2px solid $orange !important;
+    }
+
+    .m-nav ul li {
+        color: $lightblue;
+        border-bottom:2px solid $lightblue;
+    }
+}
+
+// --------------------------------------------------------------------------
+// Process
+// --------------------------------------------------------------------------
+
+.m-process-intro {
+    border-bottom: 1px solid rgba($darkblue, 0.25);
+    @include rhythm($padding-trailer: 3);
+}
+
+.m-process-graph {
+    @include rhythm($padding-leader: 3);
+}
+
+// --------------------------------------------------------------------------
+// Pricing
+// --------------------------------------------------------------------------
+
+.m-pricing {
+    h2 {
+        @include adjust-font-size-to(72px);
+        border-bottom: 0px solid rgba($darkblue, 0.25);
+        @include rhythm($padding-trailer: 0.25);
+    }
+
+    h3 {
+        @include adjust-font-size-to(30px);
+        @include rhythm($padding-leader: 0.5, $padding-trailer: 0.5);
+    }
+
+    h3:last-of-type {
+        text-align: right;
+        @include span-columns(12 omega,12);
+    }
+
+    h4 {
+        @include rhythm($padding-trailer: 0.25);
+    }
+
+    p {
+        font-family: $serif;
+        @include adjust-font-size-to(20px);
+        @include rhythm($padding-trailer: 1);
+    }
+
+    ul {
+        font-family: $serif;
+        color: rgba($darkblue, 0.75);
+    }
+}
+
+.m-pricing-packages {
+    @include rhythm($padding-trailer: 2);
+}
+
+.m-pricing-size {
+    text-align: left;
+    @include span-columns(6 alpha,12);
+    font-weight: 100;
+}
+
+.m-pricing-price {
+    text-align: right;
+    @include span-columns(6 omega,12);
+    font-weight: 100;
+}
+
+.m-pricing-form {
+    @include rhythm($padding-leader: 2);
+
+    div {
+        @include rhythm($padding-trailer: 0.5);
+    }
+
+    label {
+        @include rhythm($padding-leader: 0.5);
+    }
+
+    textarea {
+    height: 180px;
+    @include adjust-font-size-to(20px, 1.25);
+    }
+}
+
+.m-pricing-form label {
+    @include adjust-font-size-to(16px);
+    color: rgba($darkblue, 0.75);
+}
+
+.m-pricing-field {
+    @include adjust-font-size-to(20px);
+    height: 40px;
+    padding: 0.25em 0 0.25em 0.5em;
+}
+
+.m-pricing-btn {
+    padding: 8px 16px;
+    @include adjust-font-size-to(18px);
+    font-family: $sans;
+    font-weight: 100;
+}
+
+.m-pricing-thanks {
+    @include adjust-font-size-to(24px);
+    @include rhythm($padding-leader: 2, $padding-trailer: 2);
+    @include border-radius(5px);
+    text-align: center;
+    clear: both;
+    border: 1px solid $darkblue;
+    background: rgba($darkblue, 0.25);
+}
+
+//
+// Contact Form
+//
+
+.m-contact-form {
+    @include rhythm($padding-trailer: 1);
+
+    input {
+        @include rhythm($trailer: 0.25);
+    }
+}
+
+.m-contact-form label {
+    color:$lightblue;
+}
+
+.m-contact-info {
+    @include rhythm($padding-leader: 1);
+
+    h3 {
+        @include rhythm($padding-leader: 1);
+        @include adjust-font-size-to(30px);
+    }
+
+    p {
+        @include adjust-font-size-to(20px);
+    }
+}
+
+.m-contact-btn {
+    @include rhythm($leader: 1);
+}
+
+.m-contact-thanks {
+    @include adjust-font-size-to(24px);
+    @include rhythm($padding-leader: 2, $padding-trailer: 2);
+    @include border-radius(5px);
+    margin-top: 200px;
+    text-align: center;
+    clear: both;
+    border: 1px solid $darkblue;
+    background: rgba($darkblue, 0.25);
+}
+
+// --------------------------------------------------------------------------
+// Footer
+// --------------------------------------------------------------------------
+
+.m-footer img {
+    @include leader(0.5);
+    @include trailer(1);
+}
+
+.m-footer ul {
+    list-style: none;
+}
+
+.m-footer ul li {
+    border-bottom: 1px solid rgba($lightblue, 0.25)
+}
+
+// --------------------------------------------------------------------------
+// Clients
+// --------------------------------------------------------------------------
+
+.m-client-header {
+    color: rgba($darkblue, 0.5); 
+}
+
+.m-client-list {
+    clear: both;
+    @include rhythm($padding-leader: 2);
+}
+
+.m-client-list li {
+    list-style: none;
+    @include span-columns(3,12); /*Need to find more elegant solution*/
+    &:nth-of-type(4n+3) { @include omega; }
+    @include rhythm($padding-leader: 0.5);
+}
+
+// --------------------------------------------------------------------------
+// Forms
+// --------------------------------------------------------------------------
+
+.m-form {}
+
+.m-form-btn {
+    // background: linear-gradient(darken($orange, 5%), darken($orange, 10%));
+    background: $orange;
+    color: $lightblue;
+    // box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 15px 17px rgba(255,255,255,0.1);
+    border: 0 none;
+    @include border-radius(5px);
+}
+
+.m-form-btn:active {
+    -webkit-box-shadow: inset 0 -1px 1px darken($orange, 30%), inset 0 3px 10px darken($orange, 20%);
+    -moz-box-shadow: inset 0 -1px 1px darken($orange, 30%), inset 0 3px 10px darken($orange, 20%);
+    box-shadow: inset 0 -1px 1px darken($orange, 30%), inset 0 3px 10px darken($orange, 20%);
+}
+
+.m-form-field {
+    @include placeholder($darkblue);
+    @include box-shadow($shadow-1,$shadow-2,$shadow-3,$shadow-4);
+    @include placeholder-focus(transparent);
+}
+
+textarea, select {
+    @include adjust-font-size-to(18px, 1);
+}
+
+textarea, input {
+    border: 0 none;
+    -webkit-appearance: none;
+}
+
+// --------------------------------------------------------------------------
+// Needs a home
+// --------------------------------------------------------------------------
+
+.m-light,.m-dark {
+    padding: 80px 0;
+
+    p {@include adjust-leading-to(1.3);}
+}
+
+.m-header h2, .m-header h3 {
+    @include adjust-font-size-to(96px);
+}
+
+h2 {
+    font-family: $display;
+    text-transform: uppercase;
+}
+
+.m-header h3 {
+    font-family: $script;
+    text-transform: lowercase;
+}
